@@ -1,37 +1,38 @@
 const vocabulary = [
-    { front: "Watashi", back: "I / Me (わたし)" },
-    { front: "Anata", back: "You (あなた)" },
-    { front: "Namae", back: "Name (なまえ)" },
-    { front: "Nani / Nan", back: "What (なに / なん)" },
-    { front: "Gakusei", back: "Student (がくせい)" },
-    { front: "Sumu", back: "To live (すむ)" },
+    { front: "I / Me", back: "Watashi (わたし)" },
+    { front: "You", back: "Anata (あなた)" },
+    { front: "Name", back: "Namae (なまえ)" },
+    { front: "What", back: "Nani / Nan (なに / なん)" },
+    { front: "Student", back: "Gakusei (がくせい)" },
+    { front: "To live", back: "Sumu (すむ)" },
 
-    { front: "Kaisha-in", back: "Company employee (かいしゃいん)" },
-    { front: "Koumu-in", back: "Government employee (こうむいん)" },
-    { front: "Ten-in", back: "Shop assistant (てんいん)" },
-    { front: "Sensei", back: "Teacher (せんせい)" },
-    { front: "Seito", back: "Student (せいと)" },
-    { front: "Kyouju", back: "Professor (きょうじゅ)" },
-    { front: "Jo-kyouju", back: "Associate professor (じょきょうじゅ)" },
+    { front: "Company employee", back: "Kaisha-in (かいしゃいん)" },
+    { front: "Government employee", back: "Koumu-in (こうむいん)" },
+    { front: "Shop assistant", back: "Ten-in (てんいん)" },
+    { front: "Teacher", back: "Sensei (せんせい)" },
+    { front: "Student (school)", back: "Seito (せいと)" },
+    { front: "Professor", back: "Kyouju (きょうじゅ)" },
+    { front: "Associate professor", back: "Jo-kyouju (じょきょうじゅ)" },
 
-    { front: "Aisatsu", back: "Greeting (あいさつ)" },
-    { front: "Jiko Shoukai", back: "Self introduction (じこしょうかい)" },
+    { front: "Greeting", back: "Aisatsu (あいさつ)" },
+    { front: "Self introduction", back: "Jiko shoukai (じこしょうかい)" },
 
-    { front: "Ohayou gozaimasu", back: "Good morning (おはようございます)" },
-    { front: "Konnichiwa", back: "Hello (こんにちは)" },
-    { front: "Konbanwa", back: "Good evening (こんばんは)" },
-    { front: "Sayounara", back: "Goodbye (さようなら)" },
-    { front: "Arigatou gozaimasu", back: "Thank you very much (ありがとうございます)" },
-    { front: "Sumimasen", back: "Excuse me / Sorry (すみません)" },
+    { front: "Good morning", back: "Ohayou gozaimasu (おはようございます)" },
+    { front: "Hello", back: "Konnichiwa (こんにちは)" },
+    { front: "Good evening", back: "Konbanwa (こんばんは)" },
+    { front: "Goodbye", back: "Sayounara (さようなら)" },
+    { front: "Thank you very much", back: "Arigatou gozaimasu (ありがとうございます)" },
+    { front: "Excuse me / Sorry", back: "Sumimasen (すみません)" },
 
-    { front: "Kore", back: "This (これ)" },
-    { front: "Sore", back: "That (それ)" },
-    { front: "Are", back: "That over there (あれ)" },
+    { front: "This", back: "Kore (これ)" },
+    { front: "That", back: "Sore (それ)" },
+    { front: "That over there", back: "Are (あれ)" },
 
-    { front: "Hon", back: "Book (ほん)" },
-    { front: "Tsukue", back: "Desk (つくえ)" },
-    { front: "Isu", back: "Chair (いす)" }
+    { front: "Book", back: "Hon (ほん)" },
+    { front: "Desk", back: "Tsukue (つくえ)" },
+    { front: "Chair", back: "Isu (いす)" }
 ];
+
 
 let index = 0;
 

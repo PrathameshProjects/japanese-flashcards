@@ -1,3 +1,5 @@
+const progressText = document.getElementById("progress");
+
 const vocabulary = [
     { front: "I / Me", back: "Watashi (わたし)" },
     { front: "You", back: "Anata (あなた)" },
@@ -48,7 +50,10 @@ function loadCard() {
     flashcard.classList.remove("flipped");
     front.textContent = vocabulary[index].front;
     back.textContent = vocabulary[index].back;
+
+    progressText.textContent = `${index + 1} / ${vocabulary.length} words`;
 }
+
 
 function nextCard() {
     index = (index + 1) % vocabulary.length;

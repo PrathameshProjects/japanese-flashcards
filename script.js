@@ -5,39 +5,30 @@ const words = [
     { front: "Home", back: "Ie (いえ)" }
 ];
 
-let currentIndex = 0;
-const flashcard = document.getElementById("flashcard");
-const cardFront = document.getElementById("cardFront");
-const cardBack = document.getElementById("cardBack");
+let index = 0;
 
-/* Flip card when clicked */
+const flashcard = document.getElementById("flashcard");
+const front = document.getElementById("cardFront");
+const back = document.getElementById("cardBack");
+
 flashcard.addEventListener("click", () => {
     flashcard.classList.toggle("flipped");
 });
 
-/* Load card */
 function loadCard() {
     flashcard.classList.remove("flipped");
-    cardFront.textContent = words[currentIndex].front;
-    cardBack.textContent = words[currentIndex].back;
+    front.textContent = words[index].front;
+    back.textContent = words[index].back;
 }
 
-/* Next card */
 function nextCard() {
-    currentIndex = (currentIndex + 1) % words.length;
+    index = (index + 1) % words.length;
     loadCard();
 }
 
-/* Previous card */
 function prevCard() {
-    currentIndex = (currentIndex - 1 + words.length) % words.length;
+    index = (index - 1 + words.length) % words.length;
     loadCard();
 }
 
-/* Tab function */
-function openWords() {
-    document.getElementById("wordsSection").style.display = "block";
-}
-
-/* Initial load */
 loadCard();

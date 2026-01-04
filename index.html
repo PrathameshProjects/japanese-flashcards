@@ -7,43 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Japanese Flashcards</h1>
-        
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('words')">Words</button>
+
+<!-- Tabs -->
+<div class="tabs">
+    <button class="tab active" onclick="openWords()">Words</button>
+</div>
+
+<!-- Words Section -->
+<div id="wordsSection">
+    <div class="flashcard-container">
+
+        <div class="flashcard" id="flashcard">
+            <div class="card-front" id="cardFront">Apple</div>
+            <div class="card-back" id="cardBack">Ringo (りんご)</div>
         </div>
-        
-        <!-- Words Tab Content -->
-        <div id="words" class="tab-content active">
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-label">Card:</span>
-                    <span id="progress" class="stat-value">1/20</span>
-                </div>
-            </div>
-            
-            <div class="flashcard" id="flashcard">
-                <div class="card-inner" id="cardInner">
-                    <div class="card-front">
-                        <div class="word" id="word">Hello</div>
-                    </div>
-                    <div class="card-back">
-                        <div class="japanese" id="meaning">こんにちは</div>
-                        <div class="romaji" id="romaji">konnichiwa</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="controls">
-                <button class="btn btn-secondary" id="prevBtn">← Back</button>
-                <button class="btn btn-primary" id="flipBtn">Preview</button>
-                <button class="btn btn-secondary" id="nextBtn">Next →</button>
-            </div>
+
+        <div class="controls">
+            <button onclick="prevCard()">⬅ Back</button>
+            <button onclick="nextCard()">Next ➡</button>
         </div>
+
     </div>
-    
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

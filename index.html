@@ -10,35 +10,37 @@
     <div class="container">
         <h1>Japanese Flashcards</h1>
         
-        <div class="stats">
-            <div class="stat-item">
-                <span class="stat-label">Progress:</span>
-                <span id="progress" class="stat-value">0/0</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-label">Score:</span>
-                <span id="score" class="stat-value">0</span>
-            </div>
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('words')">Words</button>
         </div>
         
-        <div class="flashcard" id="flashcard">
-            <div class="card-inner" id="cardInner">
-                <div class="card-front">
-                    <div class="word" id="word">Click Start to Begin</div>
-                </div>
-                <div class="card-back">
-                    <div class="meaning" id="meaning"></div>
-                    <div class="romaji" id="romaji"></div>
+        <!-- Words Tab Content -->
+        <div id="words" class="tab-content active">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Card:</span>
+                    <span id="progress" class="stat-value">1/20</span>
                 </div>
             </div>
-        </div>
-        
-        <div class="controls">
-            <button class="btn btn-primary" id="startBtn">Start</button>
-            <button class="btn btn-secondary" id="flipBtn" disabled>Flip Card</button>
-            <button class="btn btn-success" id="knowBtn" disabled>I Know This</button>
-            <button class="btn btn-danger" id="dontKnowBtn" disabled>Don't Know</button>
-            <button class="btn btn-info" id="nextBtn" disabled>Next Card</button>
+            
+            <div class="flashcard" id="flashcard">
+                <div class="card-inner" id="cardInner">
+                    <div class="card-front">
+                        <div class="word" id="word">Hello</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="japanese" id="meaning">こんにちは</div>
+                        <div class="romaji" id="romaji">konnichiwa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-secondary" id="prevBtn">← Back</button>
+                <button class="btn btn-primary" id="flipBtn">Preview</button>
+                <button class="btn btn-secondary" id="nextBtn">Next →</button>
+            </div>
         </div>
     </div>
     

@@ -10,9 +10,10 @@ const vocabulary = [
     { front: "Government employee", back: "Koumu-in (こうむいん)" },
     { front: "Shop assistant", back: "Ten-in (てんいん)" },
     { front: "Teacher", back: "Sensei (せんせい)" },
-    { front: "Student (school)", back: "Seito (せいと)" },
+    { front: "pupil", back: "Seito (せいと)" },
     { front: "Professor", back: "Kyouju (きょうじゅ)" },
     { front: "Associate professor", back: "Jo-kyouju (じょきょうじゅ)" },
+     { front: "student", back: "gakusei" },
 
     { front: "Greeting", back: "Aisatsu (あいさつ)" },
     { front: "Self introduction", back: "Jiko shoukai (じこしょうかい)" },

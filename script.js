@@ -1,4 +1,4 @@
-const progressText = document.getElementById("progress");
+
 
 const vocabulary = [
     { front: "I / Me", back: "Watashi (わたし)" },
@@ -37,7 +37,7 @@ const vocabulary = [
 
 
 let index = 0;
-
+const progressText = document.getElementById("progress");
 const flashcard = document.getElementById("flashcard");
 const front = document.getElementById("cardFront");
 const back = document.getElementById("cardBack");

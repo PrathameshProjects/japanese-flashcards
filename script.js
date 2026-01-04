@@ -48,10 +48,13 @@ flashcard.addEventListener("click", () => {
 
 function loadCard() {
     flashcard.classList.remove("flipped");
+
     front.textContent = vocabulary[index].front;
     back.textContent = vocabulary[index].back;
 
-    progressText.textContent = `${index + 1} / ${vocabulary.length} words`;
+    if (progressText) {
+        progressText.textContent = (index + 1) + " / " + vocabulary.length + " words";
+    }
 }
 
 

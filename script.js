@@ -1,31 +1,29 @@
-// Japanese words database
+// Japanese words database - English on front, Japanese on back
 const flashcards = [
-    { word: "こんにちは", romaji: "konnichiwa", meaning: "Hello" },
-    { word: "ありがとう", romaji: "arigatou", meaning: "Thank you" },
-    { word: "さようなら", romaji: "sayounara", meaning: "Goodbye" },
-    { word: "おはよう", romaji: "ohayou", meaning: "Good morning" },
-    { word: "すみません", romaji: "sumimasen", meaning: "Excuse me / Sorry" },
-    { word: "はい", romaji: "hai", meaning: "Yes" },
-    { word: "いいえ", romaji: "iie", meaning: "No" },
-    { word: "おやすみ", romaji: "oyasumi", meaning: "Good night" },
-    { word: "ください", romaji: "kudasai", meaning: "Please" },
-    { word: "わかりました", romaji: "wakarimashita", meaning: "I understand" },
-    { word: "学校", romaji: "gakkou", meaning: "School" },
-    { word: "本", romaji: "hon", meaning: "Book" },
-    { word: "水", romaji: "mizu", meaning: "Water" },
-    { word: "食べる", romaji: "taberu", meaning: "To eat" },
-    { word: "飲む", romaji: "nomu", meaning: "To drink" },
-    { word: "友達", romaji: "tomodachi", meaning: "Friend" },
-    { word: "時間", romaji: "jikan", meaning: "Time" },
-    { word: "好き", romaji: "suki", meaning: "Like" },
-    { word: "嫌い", romaji: "kirai", meaning: "Dislike" },
-    { word: "勉強", romaji: "benkyou", meaning: "Study" }
+    { word: "Hello", romaji: "konnichiwa", japanese: "こんにちは" },
+    { word: "Thank you", romaji: "arigatou", japanese: "ありがとう" },
+    { word: "Goodbye", romaji: "sayounara", japanese: "さようなら" },
+    { word: "Good morning", romaji: "ohayou", japanese: "おはよう" },
+    { word: "Excuse me / Sorry", romaji: "sumimasen", japanese: "すみません" },
+    { word: "Yes", romaji: "hai", japanese: "はい" },
+    { word: "No", romaji: "iie", japanese: "いいえ" },
+    { word: "Good night", romaji: "oyasumi", japanese: "おやすみ" },
+    { word: "Please", romaji: "kudasai", japanese: "ください" },
+    { word: "I understand", romaji: "wakarimashita", japanese: "わかりました" },
+    { word: "School", romaji: "gakkou", japanese: "学校" },
+    { word: "Book", romaji: "hon", japanese: "本" },
+    { word: "Water", romaji: "mizu", japanese: "水" },
+    { word: "To eat", romaji: "taberu", japanese: "食べる" },
+    { word: "To drink", romaji: "nomu", japanese: "飲む" },
+    { word: "Friend", romaji: "tomodachi", japanese: "友達" },
+    { word: "Time", romaji: "jikan", japanese: "時間" },
+    { word: "Like", romaji: "suki", japanese: "好き" },
+    { word: "Dislike", romaji: "kirai", japanese: "嫌い" },
+    { word: "Study", romaji: "benkyou", japanese: "勉強" }
 ];
 
 let currentIndex = 0;
-let score = 0;
 let isFlipped = false;
-let hasStarted = false;
 
 // Get DOM elements
 const wordElement = document.getElementById('word');
@@ -33,50 +31,16 @@ const meaningElement = document.getElementById('meaning');
 const romajiElement = document.getElementById('romaji');
 const cardInner = document.getElementById('cardInner');
 const progressElement = document.getElementById('progress');
-const scoreElement = document.getElementById('score');
 
-const startBtn = document.getElementById('startBtn');
 const flipBtn = document.getElementById('flipBtn');
-const knowBtn = document.getElementById('knowBtn');
-const dontKnowBtn = document.getElementById('dontKnowBtn');
+const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-
-// Shuffle array function
-function shuffleArray(array) {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-    }
-    return newArray;
-}
-
-let shuffledCards = [];
-
-// Start the quiz
-function startQuiz() {
-    hasStarted = true;
-    shuffledCards = shuffleArray(flashcards);
-    currentIndex = 0;
-    score = 0;
-    
-    startBtn.disabled = true;
-    flipBtn.disabled = false;
-    
-    showCard();
-    updateStats();
-}
 
 // Show current card
 function showCard() {
-    if (currentIndex >= shuffledCards.length) {
-        endQuiz();
-        return;
-    }
-    
-    const card = shuffledCards[currentIndex];
+    const card = flashcards[currentIndex];
     wordElement.textContent = card.word;
-    meaningElement.textContent = card.meaning;
+    meaningElement.textContent = card.japanese;
     romajiElement.textContent = card.romaji;
     
     // Reset flip
@@ -85,86 +49,52 @@ function showCard() {
         isFlipped = false;
     }
     
-    // Enable/disable buttons
-    flipBtn.disabled = false;
-    knowBtn.disabled = true;
-    dontKnowBtn.disabled = true;
-    nextBtn.disabled = true;
+    updateProgress();
+    updateButtons();
 }
 
 // Flip card
 function flipCard() {
     cardInner.classList.toggle('flipped');
     isFlipped = !isFlipped;
-    
-    if (isFlipped) {
-        flipBtn.disabled = true;
-        knowBtn.disabled = false;
-        dontKnowBtn.disabled = false;
+}
+
+// Go to previous card
+function previousCard() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showCard();
     }
-}
-
-// Handle "I Know This" button
-function handleKnow() {
-    score++;
-    updateStats();
-    
-    knowBtn.disabled = true;
-    dontKnowBtn.disabled = true;
-    nextBtn.disabled = false;
-}
-
-// Handle "Don't Know" button
-function handleDontKnow() {
-    knowBtn.disabled = true;
-    dontKnowBtn.disabled = true;
-    nextBtn.disabled = false;
 }
 
 // Go to next card
 function nextCard() {
-    currentIndex++;
-    showCard();
-    updateStats();
-}
-
-// Update statistics
-function updateStats() {
-    progressElement.textContent = `${currentIndex}/${shuffledCards.length}`;
-    scoreElement.textContent = score;
-}
-
-// End quiz
-function endQuiz() {
-    wordElement.textContent = 'Quiz Complete!';
-    meaningElement.textContent = '';
-    romajiElement.textContent = '';
-    
-    if (isFlipped) {
-        cardInner.classList.remove('flipped');
-        isFlipped = false;
+    if (currentIndex < flashcards.length - 1) {
+        currentIndex++;
+        showCard();
     }
-    
-    const percentage = Math.round((score / shuffledCards.length) * 100);
-    wordElement.textContent = `Quiz Complete!`;
-    
-    setTimeout(() => {
-        alert(`Your score: ${score}/${shuffledCards.length} (${percentage}%)`);
-    }, 500);
-    
-    // Reset buttons
-    startBtn.disabled = false;
-    flipBtn.disabled = true;
-    knowBtn.disabled = true;
-    dontKnowBtn.disabled = true;
-    nextBtn.disabled = true;
-    
-    hasStarted = false;
+}
+
+// Update progress
+function updateProgress() {
+    progressElement.textContent = `${currentIndex + 1}/${flashcards.length}`;
+}
+
+// Update button states
+function updateButtons() {
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === flashcards.length - 1;
+}
+
+// Tab switching function (for future expansion)
+function showTab(tabName) {
+    // Currently only one tab, but ready for more tabs
 }
 
 // Event listeners
-startBtn.addEventListener('click', startQuiz);
 flipBtn.addEventListener('click', flipCard);
-knowBtn.addEventListener('click', handleKnow);
-dontKnowBtn.addEventListener('click', handleDontKnow);
+prevBtn.addEventListener('click', previousCard);
 nextBtn.addEventListener('click', nextCard);
+
+// Show first card on load
+showCard();

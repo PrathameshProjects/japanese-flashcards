@@ -57,15 +57,19 @@ function loadCard() {
     }
 }
 
-
 function nextCard() {
-    index = (index + 1) % vocabulary.length;
+    index++;
+    if (index >= vocabulary.length) {
+        index = 0;
+    }
     loadCard();
 }
 
 function prevCard() {
-    index = (index - 1 + vocabulary.length) % vocabulary.length;
+    index--;
+    if (index < 0) {
+        index = vocabulary.length - 1;
+    }
     loadCard();
-}
 
-loadCard();
+}

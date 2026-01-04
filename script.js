@@ -1,5 +1,3 @@
-
-
 const vocabulary = [
     { front: "I / Me", back: "Watashi (わたし)" },
     { front: "You", back: "Anata (あなた)" },
@@ -35,12 +33,12 @@ const vocabulary = [
     { front: "Chair", back: "Isu (いす)" }
 ];
 
-
 let index = 0;
-const progressText = document.getElementById("progress");
+
 const flashcard = document.getElementById("flashcard");
 const front = document.getElementById("cardFront");
 const back = document.getElementById("cardBack");
+const progressText = document.getElementById("progress");
 
 flashcard.addEventListener("click", () => {
     flashcard.classList.toggle("flipped");
@@ -52,24 +50,18 @@ function loadCard() {
     front.textContent = vocabulary[index].front;
     back.textContent = vocabulary[index].back;
 
-    if (progressText) {
-        progressText.textContent = (index + 1) + " / " + vocabulary.length + " words";
-    }
+    progressText.textContent =
+        (index + 1) + " / " + vocabulary.length + " words";
 }
 
 function nextCard() {
-    index++;
-    if (index >= vocabulary.length) {
-        index = 0;
-    }
+    index = (index + 1) % vocabulary.length;
     loadCard();
 }
 
 function prevCard() {
-    index--;
-    if (index < 0) {
-        index = vocabulary.length - 1;
-    }
+    index = (index - 1 + vocabulary.length) % vocabulary.length;
     loadCard();
-
 }
+
+loadCard();

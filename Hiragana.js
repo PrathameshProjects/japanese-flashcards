@@ -65,7 +65,7 @@ const hiraganaData  = [
     { front: "wo", back: "を" },
     
     // N
-    { front: "n", back: "ん" }
+    { front: "n", back: "ん" },
 
         // GA row (が ぎ ぐ げ ご)
     { front: "ga", back: "が" },
@@ -118,21 +118,21 @@ flashcard.addEventListener("click", () => {
 function loadCard() {
     flashcard.classList.remove("flipped");
 
-    front.textContent = vocabulary[index].front;
-    back.textContent = vocabulary[index].back;
+   front.textContent = hiraganaData[index].front;
+back.textContent = hiraganaData[index].back;
+progressText.textContent = (index + 1) + " / " + hiraganaData.length + " words";
 
-    progressText.textContent =
-        (index + 1) + " / " + vocabulary.length + " words";
 }
 
 function nextCard() {
-    index = (index + 1) % vocabulary.length;
+    index = (index + 1) % hiraganaData.length;
     loadCard();
 }
 
 function prevCard() {
-    index = (index - 1 + vocabulary.length) % vocabulary.length;
+    index = (index - 1 + hiraganaData.length) % hiraganaData.length;
     loadCard();
 }
+
 
 loadCard();

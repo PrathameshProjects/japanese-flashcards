@@ -1,38 +1,73 @@
-const vocabulary = [
-    { front: "I / Me", back: "Watashi (わたし)" },
-    { front: "You", back: "Anata (あなた)" },
-    { front: "Name", back: "Namae (なまえ)" },
-    { front: "What", back: "Nani / Nan (なに / なん)" },
-    { front: "Student", back: "Gakusei (がくせい)" },
-    { front: "To live", back: "Sumu (すむ)" },
-
-    { front: "Company employee", back: "Kaisha-in (かいしゃいん)" },
-    { front: "Government employee", back: "Koumu-in (こうむいん)" },
-    { front: "Shop assistant", back: "Ten-in (てんいん)" },
-    { front: "Teacher", back: "Sensei (せんせい)" },
-    { front: "pupil", back: "Seito (せいと)" },
-    { front: "Professor", back: "Kyouju (きょうじゅ)" },
-    { front: "Associate professor", back: "Jo-kyouju (じょきょうじゅ)" },
-     { front: "student", back: "gakusei" },
-
-    { front: "Greeting", back: "Aisatsu (あいさつ)" },
-    { front: "Self introduction", back: "Jiko shoukai (じこしょうかい)" },
-
-    { front: "Good morning", back: "Ohayou gozaimasu (おはようございます)" },
-    { front: "Hello", back: "Konnichiwa (こんにちは)" },
-    { front: "Good evening", back: "Konbanwa (こんばんは)" },
-    { front: "Goodbye", back: "Sayounara (さようなら)" },
-    { front: "Thank you very much", back: "Arigatou gozaimasu (ありがとうございます)" },
-    { front: "Excuse me / Sorry", back: "Sumimasen (すみません)" },
-
-    { front: "This", back: "Kore (これ)" },
-    { front: "That", back: "Sore (それ)" },
-    { front: "That over there", back: "Are (あれ)" },
-
-    { front: "Book", back: "Hon (ほん)" },
-    { front: "Desk", back: "Tsukue (つくえ)" },
-    { front: "Chair", back: "Isu (いす)" }
+const hiraganaData = [
+    // A row
+    { front: "a", back: "あ" },
+    { front: "i", back: "い" },
+    { front: "u", back: "う" },
+    { front: "e", back: "え" },
+    { front: "o", back: "お" },
+    
+    // KA row
+    { front: "ka", back: "か" },
+    { front: "ki", back: "き" },
+    { front: "ku", back: "く" },
+    { front: "ke", back: "け" },
+    { front: "ko", back: "こ" },
+    
+    // SA row
+    { front: "sa", back: "さ" },
+    { front: "shi", back: "し" },
+    { front: "su", back: "す" },
+    { front: "se", back: "せ" },
+    { front: "so", back: "そ" },
+    
+    // TA row
+    { front: "ta", back: "た" },
+    { front: "chi", back: "ち" },
+    { front: "tsu", back: "つ" },
+    { front: "te", back: "て" },
+    { front: "to", back: "と" },
+    
+    // NA row
+    { front: "na", back: "な" },
+    { front: "ni", back: "に" },
+    { front: "nu", back: "ぬ" },
+    { front: "ne", back: "ね" },
+    { front: "no", back: "の" },
+    
+    // HA row
+    { front: "ha", back: "は" },
+    { front: "hi", back: "ひ" },
+    { front: "fu", back: "ふ" },
+    { front: "he", back: "へ" },
+    { front: "ho", back: "ほ" },
+    
+    // MA row
+    { front: "ma", back: "ま" },
+    { front: "mi", back: "み" },
+    { front: "mu", back: "む" },
+    { front: "me", back: "め" },
+    { front: "mo", back: "も" },
+    
+    // YA row
+    { front: "ya", back: "や" },
+    { front: "yu", back: "ゆ" },
+    { front: "yo", back: "よ" },
+    
+    // RA row
+    { front: "ra", back: "ら" },
+    { front: "ri", back: "り" },
+    { front: "ru", back: "る" },
+    { front: "re", back: "れ" },
+    { front: "ro", back: "ろ" },
+    
+    // WA row
+    { front: "wa", back: "わ" },
+    { front: "wo", back: "を" },
+    
+    // N
+    { front: "n", back: "ん" }
 ];
+
 
 let index = 0;
 

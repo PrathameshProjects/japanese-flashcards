@@ -1,4 +1,4 @@
-const vocabulary = [
+const hiraganaData  = [
     // A row
     { front: "a", back: "あ" },
     { front: "i", back: "い" },

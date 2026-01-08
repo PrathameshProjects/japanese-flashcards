@@ -66,6 +66,41 @@ const hiraganaData  = [
     
     // N
     { front: "n", back: "ん" }
+
+        // GA row (が ぎ ぐ げ ご)
+    { front: "ga", back: "が" },
+    { front: "gi", back: "ぎ" },
+    { front: "gu", back: "ぐ" },
+    { front: "ge", back: "げ" },
+    { front: "go", back: "ご" },
+    
+    // ZA row (ざ じ ず ぜ ぞ)
+    { front: "za", back: "ざ" },
+    { front: "ji", back: "じ" },
+    { front: "zu", back: "ず" },
+    { front: "ze", back: "ぜ" },
+    { front: "zo", back: "ぞ" },
+    
+    // DA row (だ ぢ づ で ど)
+    { front: "da", back: "だ" },
+    { front: "ji", back: "ぢ" },
+    { front: "zu", back: "づ" },
+    { front: "de", back: "で" },
+    { front: "do", back: "ど" },
+    
+    // BA row (ば び ぶ べ ぼ)
+    { front: "ba", back: "ば" },
+    { front: "bi", back: "び" },
+    { front: "bu", back: "ぶ" },
+    { front: "be", back: "べ" },
+    { front: "bo", back: "ぼ" },
+    
+    // PA row (ぱ ぴ ぷ ぺ ぽ)
+    { front: "pa", back: "ぱ" },
+    { front: "pi", back: "ぴ" },
+    { front: "pu", back: "ぷ" },
+    { front: "pe", back: "ぺ" },
+    { front: "po", back: "ぽ" }
 ];
 
 
